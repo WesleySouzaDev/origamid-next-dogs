@@ -35,8 +35,8 @@ export default function LoginResetarForm({ keyToken, login }: SearchParams) {
           label="Nova Senha"
           placeholder="Digite sua nova senha..."
         />
-        <input type="hidden" name="login" value={login} />
-        <input type="hidden" name="key" value={keyToken} />
+        <input type="text" name="login" value={login} />
+        <input type="text" name="key" value={keyToken} />
 
         <ErrorMessage error={state.error} />
         <FormButton />

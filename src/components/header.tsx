@@ -19,7 +19,7 @@ export default async function Header() {
           </Link>
         ) : (
           <Link className={styles.login} href="/login">
-            Login /
+            Login / Cadastro
           </Link>
         )}
       </nav>

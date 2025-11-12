@@ -13,6 +13,7 @@ export default async function Login(state: {}, formData: FormData) {
 
     const { url } = TOKEN_POST();
     const response = await fetch(url, {
+      cache: 'no-store',
       method: 'POST',
       body: formData,
     });

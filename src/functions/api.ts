@@ -31,32 +31,29 @@ export const USER_POST = () => {
   };
 };
 
-export const PHOTO_POST = (formData, token) => {
+export const PHOTO_POST = () => {
   return {
     url: `${BASE_URL}/api/photo`,
-    options: {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      body: formData,
-    },
   };
 };
 
-export const PHOTOS_GET = ({ page, total, user }) => {
+export const PHOTOS_GET = ({
+  page,
+  total,
+  user,
+}: {
+  page: number;
+  total: number;
+  user: 0 | string;
+}) => {
   return {
     url: `${BASE_URL}/api/photo?_page=${page}&_total=${total}&_user=${user}`,
   };
 };
 
-export const PHOTO_GET = (id) => {
+export const PHOTO_GET = (id: string) => {
   return {
     url: `${BASE_URL}/api/photo/${id}`,
-    options: {
-      method: 'GET',
-      cache: 'no-store',
-    },
   };
 };
 
