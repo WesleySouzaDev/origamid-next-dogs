@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '@/css/loading.module.css';
+import style from '@/css/Loading.module.css';
 
 const Loading = ({ modal }: { modal?: boolean }) => {
   const [step, setStep] = React.useState(0);
