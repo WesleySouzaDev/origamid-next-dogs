@@ -12,9 +12,10 @@ export default function FeedPhotos({ photos }: { photos: Photo[] }) {
             <Image
               src={photo.src}
               alt={photo.title}
-              width={1500}
-              height={1500}
+              width={1000}
+              height={1000}
               sizes="80vw"
+              loading="eager"
             />
 
             <span className={styles.visualizacao}>{photo.acessos}</span>

@@ -13,6 +13,10 @@ import UserGet from '@/actions/user-get';
 export const metadata: Metadata = {
   title: 'Next Dogs',
   description: 'Projeto Next.js com Dogs API',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+  },
 };
 
 export default async function RootLayout({

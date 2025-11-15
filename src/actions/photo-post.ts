@@ -5,7 +5,6 @@
 
 import { PHOTO_POST } from '@/functions/api';
 import ApiError from '@/functions/api-error';
-import Login from './login';
 import { cookies } from 'next/headers';
 
 export default async function PhotoPost(state: {}, formData: FormData) {
@@ -28,7 +27,8 @@ export default async function PhotoPost(state: {}, formData: FormData) {
       body: formData,
     });
 
-    if (!response.ok) throw new Error('Email ou senha já cadastrados');
+    if (!response.ok)
+      throw new Error('Falha ao postar foto, tente novamente mais tarde');
     return { data: null, ok: true, error: '' };
   } catch (error: unknown) {
     return ApiError(error);

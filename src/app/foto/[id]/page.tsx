@@ -1,17 +1,29 @@
 import PhotoGet from '@/actions/photo-get';
+import PhotoContent from '@/components/photo/photo-content';
+import { notFound } from 'next/navigation';
 
-type Params = {
+type PhotoIdParams = {
   params: { id: string };
 };
 
-export default async function FotoIdPage({ params }: Params) {
+export async function generateMetadata({ params }: PhotoIdParams) {
   const { id } = await params;
   const { data } = await PhotoGet(id);
 
-  if (!data) return null;
+  if (!data) return { title: 'Fotos' };
+  return {
+    title: data.photo.title,
+  };
+}
+
+export default async function FotoIdPage({ params }: PhotoIdParams) {
+  const { id } = await params;
+  const { data } = await PhotoGet(id);
+
+  if (!data) return notFound();
   return (
     <section className="container mainContainer">
-      <h1>FotoID: {data.photo.title}</h1>
+      <PhotoContent data={data} single={true} />
     </section>
   );
 }

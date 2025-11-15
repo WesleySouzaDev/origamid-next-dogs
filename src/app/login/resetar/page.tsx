@@ -7,13 +7,14 @@ export const metadata: Metadata = {
 };
 
 export type SearchParams = {
-  searchParams: {
+  searchParams: Promise<{
     key: string;
     login: string;
-  };
+  }>;
 };
 
-export default async function ResetarPage({ searchParams }: SearchParams) {
+export default async function ResetarPage(props: SearchParams) {
+  const searchParams = await props.searchParams;
   return (
     <div>
       <section className="animeLeft">

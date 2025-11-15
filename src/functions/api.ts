@@ -7,15 +7,9 @@ export const TOKEN_POST = () => {
   };
 };
 
-export const TOKEN_VALIDATE_POST = (token) => {
+export const TOKEN_VALIDATE_POST = () => {
   return {
     url: `${BASE_URL}/jwt-auth/v1/token/validate`,
-    options: {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    },
   };
 };
 
@@ -63,29 +57,15 @@ export const PHOTO_URL_GET = (id) => {
   };
 };
 
-export const COMMENTS_POST = (id, body, token) => {
+export const COMMENTS_POST = (id: string) => {
   return {
     url: `${BASE_URL}/api/comment/${id}`,
-    options: {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(body),
-    },
   };
 };
 
-export const PHOTO_DELETE = (id, token) => {
+export const PHOTO_DELETE = (id) => {
   return {
     url: `${BASE_URL}/api/photo/${id}`,
-    options: {
-      method: 'DELETE',
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    },
   };
 };
 
@@ -101,14 +81,8 @@ export const PASSWORD_RESET = () => {
   };
 };
 
-export const STATS_GET = (token) => {
+export const STATS_GET = () => {
   return {
     url: `${BASE_URL}/api/stats`,
-    options: {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    },
   };
 };

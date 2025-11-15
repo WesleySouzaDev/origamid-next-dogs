@@ -10,7 +10,13 @@ export default async function Header() {
     <header className={styles.header}>
       <nav className={`${styles.nav} container`}>
         <Link className={styles.logo} href="/">
-          <Image src="/assets/dogs.svg" alt="Logo" width={28} height={22} />
+          <Image
+            src="/assets/dogs.svg"
+            alt="Logo"
+            width={28}
+            height={22}
+            loading="eager"
+          />
         </Link>
 
         {data ? (
